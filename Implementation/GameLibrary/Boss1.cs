@@ -12,6 +12,7 @@ namespace GameLibrary
 
         public Bitmap Img { get; private set; }
         public float XpDropped { get; private set; }
+        private static readonly Random rand = new Random();
 
         private static readonly string name = "Earth Elemental";
       
