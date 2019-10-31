@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace GameLibrary
 {
-    public class Boss1 : Mortal
+    public class Boss : Mortal
     {
         private const float MAX_XP_DROP = 100;
         private const float MIN_XP_DROP = 75;
@@ -18,7 +18,7 @@ namespace GameLibrary
       
     
 
-        public Boss1(int level, Bitmap img) : base(name, level)
+        public Boss(int level, Bitmap img) : base(name, level)
         {
             Img = img;
 
