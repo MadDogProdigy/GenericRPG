@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameLibrary {
+
   public enum GameState {
     LOADING,
     TITLE_SCREEN,
