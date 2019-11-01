@@ -10,8 +10,6 @@ namespace GameLibrary {
     private const int TOP_PAD = 10;
     private const int BOUNDARY_PAD = 5;
     private const int BLOCK_SIZE = 50;
-    public double encounterChance;
-    private Random rand;
 
     public int CharacterStartRow { get; private set; }
     public int CharacterStartCol { get; private set; }
@@ -77,8 +75,6 @@ namespace GameLibrary {
       grpMap.Left = 5;
 
       // initialize for game
-      encounterChance = 0.15;
-      rand = new Random();
       Game.GetGame().ChangeState(GameState.ON_MAP);
 
       // return Character object from reading map
@@ -150,13 +146,6 @@ namespace GameLibrary {
           pos.col < 0 || pos.col >= NumCols ||
           layout[pos.row, pos.col] == 1) {
         return false;
-      }
-      if (rand.NextDouble() < encounterChance) {
-        encounterChance = 0.15;
-        Game.GetGame().ChangeState(GameState.FIGHTING);
-      }
-      else {
-        encounterChance += 0.10;
       }
 
       return true;

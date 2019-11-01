@@ -10,6 +10,9 @@ namespace GenericRPG {
     private Map map;
     private Game game;
 
+    private Random rand;
+    private double encounterChance;
+
     public FrmMap() {
       InitializeComponent();
     }
@@ -24,9 +27,15 @@ namespace GenericRPG {
       Width = grpMap.Width + 25;
       Height = grpMap.Height + 50;
       game.SetCharacter(character);
+
+      rand = new Random();
+      encounterChance = 0.15;
     }
 
     private void FrmMap_KeyDown(object sender, KeyEventArgs e) {
+      // disallow input if we're in the middle of a fight
+      if (game.State == GameState.FIGHTING) return;
+
       MoveDir dir = MoveDir.NO_MOVE;
       switch (e.KeyCode) {
         case Keys.Left:
@@ -43,7 +52,22 @@ namespace GenericRPG {
           break;
       }
       if (dir != MoveDir.NO_MOVE) {
-        character.Move(dir);
+        // tell the character to move and check if the move was valid
+        bool didValidMove = character.Move(dir);
+        if (didValidMove)
+        {
+          // check for enemy encounter
+          if (rand.NextDouble() < encounterChance)
+          {
+            encounterChance = 0.15;
+            Game.GetGame().ChangeState(GameState.FIGHTING);
+          }
+          else
+          {
+            encounterChance += 0.10;
+          }
+        }
+
         if (game.State == GameState.FIGHTING) {
           FrmArena frmArena = new FrmArena();
           frmArena.Show();
