@@ -5,12 +5,17 @@ using System.Windows.Forms;
 
 namespace GenericRPG {
   public partial class FrmLevelUp : Form {
+    private SoundPlayer sp;
+
     public FrmLevelUp() {
       InitializeComponent();
+
+      // disables the [X] button
+      this.ControlBox = false;
     }
 
     private void FrmLevelUp_Load(object sender, EventArgs e) {
-      SoundPlayer sp = new SoundPlayer(@"Resources\levelup.wav");
+      sp = new SoundPlayer(@"Resources\levelup.wav");
       sp.Play();
 
       Character character = Game.GetGame().Character;
@@ -31,6 +36,8 @@ namespace GenericRPG {
     }
 
     private void btnClose_Click(object sender, EventArgs e) {
+      // stop sound
+      sp.Stop();
       Close();
     }
   }

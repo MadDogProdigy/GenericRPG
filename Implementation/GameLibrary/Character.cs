@@ -66,7 +66,7 @@ namespace GameLibrary {
       XP = 0;
     }
 
-    public void Move(MoveDir dir) {
+    public bool Move(MoveDir dir) {
       Position newPos = pos;
       switch (dir) {
         case MoveDir.UP:
@@ -87,7 +87,9 @@ namespace GameLibrary {
         Position topleft = map.RowColToTopLeft(pos);
         Pic.Left = topleft.col;
         Pic.Top = topleft.row;
+        return true;
       }
+      return false;
     }
   }
 }

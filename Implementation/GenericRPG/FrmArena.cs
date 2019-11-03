@@ -2,6 +2,7 @@
 using GenericRPG.Properties;
 using System;
 using System.Drawing;
+using System.Media;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -11,9 +12,13 @@ namespace GenericRPG {
     private Character character;
     private Enemy enemy;
     private Random rand;
+    private SoundPlayer sp;
 
     public FrmArena() {
       InitializeComponent();
+
+      // disables the [X] button
+      this.ControlBox = false;
     }
     private void btnEndFight_Click(object sender, EventArgs e) {
       EndFight();
@@ -39,6 +44,9 @@ namespace GenericRPG {
       // names
       lblPlayerName.Text = character.Name;
       lblEnemyName.Text = enemy.Name;
+
+      // create swing noise
+      sp = new SoundPlayer(@"Resources\swing.wav");
     }
     public void UpdateStats() {
       lblPlayerLevel.Text = character.Level.ToString();
@@ -58,6 +66,9 @@ namespace GenericRPG {
       lblEnemyHealth.Text = Math.Round(enemy.Health).ToString();
     }
     private void btnSimpleAttack_Click(object sender, EventArgs e) {
+      // make swing noise
+      sp.Play();
+
       float prevEnemyHealth = enemy.Health;
       character.SimpleAttack(enemy);
       float enemyDamage = (float)Math.Round(prevEnemyHealth - enemy.Health);
@@ -108,8 +119,29 @@ namespace GenericRPG {
         EndFight();
       }
       else {
+        // perform enemy turn
+        float prevPlayerHealth = character.Health;
         enemy.SimpleAttack(character);
-        UpdateStats();
+        float playerDamage = (float)Math.Round(prevPlayerHealth - character.Health);
+        lblPlayerDamage.Text = playerDamage.ToString();
+        lblPlayerDamage.Visible = true;
+        tmrPlayerDamage.Enabled = true;
+        if (character.Health <= 0)
+        {
+          UpdateStats();
+          game.ChangeState(GameState.DEAD);
+          lblEndFightMessage.Text = "You Were Defeated!";
+          lblEndFightMessage.Visible = true;
+          Refresh();
+          Thread.Sleep(1200);
+          EndFight();
+          FrmGameOver frmGameOver = new FrmGameOver();
+          frmGameOver.Show();
+        }
+        else
+        {
+          UpdateStats();
+        }
       }
     }
 
