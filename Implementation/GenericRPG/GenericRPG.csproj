@@ -54,6 +54,12 @@
     <Compile Include="FrmArena.Designer.cs">
       <DependentUpon>FrmArena.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCoinFrenzy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCoinFrenzy.Designer.cs">
+      <DependentUpon>FrmCoinFrenzy.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGameOver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,18 @@
     <Compile Include="FrmMap.Designer.cs">
       <DependentUpon>FrmMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReward.Designer.cs">
+      <DependentUpon>FrmReward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStats.Designer.cs">
+      <DependentUpon>FrmStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmArena.resx">
@@ -85,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMap.resx">
       <DependentUpon>FrmMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStats.resx">
+      <DependentUpon>FrmStats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

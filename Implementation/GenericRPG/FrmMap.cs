@@ -50,6 +50,21 @@ namespace GenericRPG {
         case Keys.Down:
           dir = MoveDir.DOWN;
           break;
+      //case Keys.S:
+      //    DialogResult result = MessageBox.show("Do you want to save the current game state?","SAVE GAME",MessageBoxButtons.YesNo);
+      //    if(result == DialogResult.Yes) {
+      //        Game.Save();
+      //    }
+      //    break;
+      //case Keys.Q:
+      //    DialogResult result = MessageBox.show("You are about to quit the game. Are you sure?","QUIT GAME",MessageBoxButtons.YesNo);
+      //    if(result == DialogResult.Yes) {
+      //        Game.Quit();
+      //    }
+      //    break;
+      //case Keys.I:
+      //    Character.GetStats();
+      //    break;
       }
       if (dir != MoveDir.NO_MOVE) {
         // tell the character to move and check if the move was valid
@@ -70,9 +85,10 @@ namespace GenericRPG {
 
         if (game.State == GameState.FIGHTING) {
           FrmArena frmArena = new FrmArena();
-          frmArena.Show();
+          frmArena.Show();//frmArena.Show();
         }
       }
     }
-  }
+
+    }
 }

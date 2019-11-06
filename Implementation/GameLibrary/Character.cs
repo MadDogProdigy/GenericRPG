@@ -25,6 +25,7 @@ namespace GameLibrary {
     private Map map;
     public float XP { get; private set; }
     public bool ShouldLevelUp { get; private set; }
+    public int Wallet { get; private set; }
 
     /// <summary>
     /// 
@@ -38,6 +39,11 @@ namespace GameLibrary {
       this.map = map;
       ShouldLevelUp = false;
     }
+
+    public void GainCoin(int amount)
+        {
+            Wallet += amount;
+        }
 
     public void GainXP(float amount) {
       XP += amount;
@@ -64,6 +70,7 @@ namespace GameLibrary {
     public override void ResetStats() {
       base.ResetStats();
       XP = 0;
+       //should not empty wallet, should just lose what gained
     }
 
     public bool Move(MoveDir dir) {

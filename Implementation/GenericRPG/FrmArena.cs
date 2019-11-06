@@ -162,5 +162,29 @@ namespace GenericRPG {
         lblEnemyDamage.Top = 52;
       }
     }
-  }
+
+    private void FrmArena_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode) {
+                case Keys.A:
+                    btnSimpleAttack_Click(sender, e);
+                    break;
+                case Keys.S:
+                    FrmArena_Shortcuts_Click(sender,e);
+                    break;
+                case Keys.R:
+                    btnRun_Click(sender, e);
+                    break;
+            }
+
+        }
+
+        private void FrmArena_Shortcuts_Click(object sender, EventArgs e)
+        {
+            String message = "The following shortcuts are available:\n" +
+                             "\tA\tAttack\n" +
+                             "\tR\tRun\n";
+            MessageBox.Show(message,"Shortcuts");
+        }
+    }
 }
