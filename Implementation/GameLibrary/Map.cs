@@ -16,6 +16,8 @@ namespace GameLibrary {
     private int NumRows { get { return layout.GetLength(0); } }
     private int NumCols { get { return layout.GetLength(1); } }
 
+    public string LevelName { get; private set; }
+
     /// <summary>
     /// 
     /// </summary>
@@ -24,6 +26,8 @@ namespace GameLibrary {
     /// <param name="LoadImg"></param>
     /// <returns></returns>
     public Character LoadMap(string mapFile, GroupBox grpMap, Func<string, Bitmap> LoadImg) {
+      LevelName = mapFile;
+
       // declare and initialize locals
       int top = TOP_PAD;
       int left = BOUNDARY_PAD;

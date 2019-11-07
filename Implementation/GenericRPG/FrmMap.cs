@@ -17,19 +17,34 @@ namespace GenericRPG {
       InitializeComponent();
     }
 
-    private void FrmMap_Load(object sender, EventArgs e) {
+    public void Reload(string level, string[] savelines = null)
+    {
       game = Game.GetGame();
+      grpMap.Controls.Clear(); // clear out the tiles
 
       map = new Map();
-      character = map.LoadMap("Resources/level.txt", grpMap, 
+      character = map.LoadMap(level, grpMap,
         str => Resources.ResourceManager.GetObject(str) as Bitmap
       );
       Width = grpMap.Width + 25;
       Height = grpMap.Height + 50;
+
+      if (savelines != null)
+      {
+        character.SetLevel(int.Parse(savelines[1]));
+        character.Health = float.Parse(savelines[3]);
+        character.Mana = float.Parse(savelines[4]);
+        character.XP = float.Parse(savelines[2]);
+      }
+
       game.SetCharacter(character);
 
       rand = new Random();
       encounterChance = 0.15;
+    }
+
+    private void FrmMap_Load(object sender, EventArgs e) {
+      Reload("Resources/level.txt");
     }
 
     private void FrmMap_KeyDown(object sender, KeyEventArgs e) {
@@ -50,21 +65,14 @@ namespace GenericRPG {
         case Keys.Down:
           dir = MoveDir.DOWN;
           break;
-      //case Keys.S:
-      //    DialogResult result = MessageBox.show("Do you want to save the current game state?","SAVE GAME",MessageBoxButtons.YesNo);
-      //    if(result == DialogResult.Yes) {
-      //        Game.Save();
-      //    }
-      //    break;
-      //case Keys.Q:
-      //    DialogResult result = MessageBox.show("You are about to quit the game. Are you sure?","QUIT GAME",MessageBoxButtons.YesNo);
-      //    if(result == DialogResult.Yes) {
-      //        Game.Quit();
-      //    }
-      //    break;
-      //case Keys.I:
-      //    Character.GetStats();
-      //    break;
+        case Keys.S:
+          // SAVE HERE
+          Save.SaveGame();
+          break;
+        case Keys.L:
+          var savelines = GameLibrary.Load.LoadGame();
+          Reload(savelines[0], savelines);
+          break;
       }
       if (dir != MoveDir.NO_MOVE) {
         // tell the character to move and check if the move was valid
@@ -85,10 +93,9 @@ namespace GenericRPG {
 
         if (game.State == GameState.FIGHTING) {
           FrmArena frmArena = new FrmArena();
-          frmArena.Show();//frmArena.Show();
+          frmArena.Show();
         }
       }
     }
-
-    }
+  }
 }
