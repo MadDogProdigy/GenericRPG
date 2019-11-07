@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GameLibrary">
-      <HintPath>..\GameLibrary\bin\Debug\GameLibrary.dll</HintPath>
+      <HintPath>..\GameLibrary\obj\Debug\GameLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -86,11 +86,21 @@
     <EmbeddedResource Include="FrmMap.resx">
       <DependentUpon>FrmMap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\GenericRPG.FrmArena.resources" />
+    <EmbeddedResource Include="obj\Debug\GenericRPG.FrmGameOver.resources" />
+    <EmbeddedResource Include="obj\Debug\GenericRPG.FrmLevelUp.resources" />
+    <EmbeddedResource Include="obj\Debug\GenericRPG.FrmMap.resources" />
+    <EmbeddedResource Include="obj\Debug\GenericRPG.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\GenericRPG.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\GenericRPG.csprojAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,12 +124,19 @@
     <None Include="Resources\wall.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="obj\Debug\GenericRPG.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources1.Designer.cs.dll" />
+    <Content Include="Resources\EartElemental.png" />
+    <Content Include="Resources\FinalBoss.png" />
+    <Content Include="Resources\FireElemental.png" />
     <Content Include="Resources\levelup.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\swing.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\WaterElemental.png" />
+    <Content Include="Resources\WindElemental.png" />
     <None Include="Resources\level2.png" />
     <None Include="Resources\quitgame.png" />
     <None Include="Resources\enemy.png" />
@@ -131,6 +148,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Debug\Resources\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
