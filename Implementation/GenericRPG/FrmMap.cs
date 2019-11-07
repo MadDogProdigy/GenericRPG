@@ -89,21 +89,7 @@ namespace GenericRPG
                     }
                     break;
                 case Keys.Q:
-                    DialogResult answer = MessageBox.Show("You are about to quit the game. Are you sure?", "QUIT GAME", MessageBoxButtons.YesNo);
-                    if (answer == DialogResult.Yes)
-                    {
-                        List<Form> openForms = new List<Form>();
-                        foreach (Form frm in Application.OpenForms)
-                        {
-                            openForms.Add(frm);
-                        }
-                        foreach (Form openForm in openForms)
-                        {
-                            if (openForm != this)
-                                openForm.Close();
-                        }
-                        Application.Exit();
-                    }
+                    ExitGame();
                     break;
                 case Keys.I:
                     FrmStats stats = new FrmStats();
@@ -113,26 +99,52 @@ namespace GenericRPG
             if (dir != MoveDir.NO_MOVE)
             {
                 // tell the character to move and check if the move was valid
-                bool didValidMove = character.Move(dir);
-                if (didValidMove)
+                switch(character.Move(dir))
                 {
-                    // check for enemy encounter
-                    if (rand.NextDouble() < encounterChance)
-                    {
-                        encounterChance = 0.15;
-                        Game.GetGame().ChangeState(GameState.FIGHTING);
-                    }
-                    else
-                    {
-                        encounterChance += 0.10;
-                    }
+                    case Task.MOVE:
+                        // check for enemy encounter
+                        if (rand.NextDouble() < encounterChance)
+                        {
+                            encounterChance = 0.15;
+                            Game.GetGame().ChangeState(GameState.FIGHTING);
+                        }
+                        else
+                        {
+                            encounterChance += 0.10;
+                        }
+                        break;
+                    case Task.FIGHT_BOSS:
+                        break;
+                    case Task.LEAVE_LEVEL:
+                        break;
+                    case Task.EXIT_GAME:
+                        ExitGame();
+                        break;
                 }
-
                 if (game.State == GameState.FIGHTING)
                 {
                     FrmArena frmArena = new FrmArena();
                     frmArena.Show();
                 }
+            }
+        }
+    
+        private void ExitGame()
+        {
+            DialogResult answer = MessageBox.Show("You are about to quit the game. Are you sure?", "QUIT GAME", MessageBoxButtons.YesNo);
+            if (answer == DialogResult.Yes)
+            {
+                List<Form> openForms = new List<Form>();
+                foreach (Form frm in Application.OpenForms)
+                {
+                    openForms.Add(frm);
+                }
+                foreach (Form openForm in openForms)
+                {
+                    if (openForm != this)
+                        openForm.Close();
+                }
+                Application.Exit();
             }
         }
     }

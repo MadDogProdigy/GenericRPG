@@ -156,6 +156,19 @@ namespace GameLibrary {
 
       return true;
     }
+     public bool IsNextLevel(Position pos)
+        {
+            return (layout[pos.row, pos.col] == 3);
+        }
+    public bool IsBossFightTime(Position pos)
+        {
+            return (layout[pos.row, pos.col] == 4);
+        }
+
+    public bool TryingToExit(Position pos)
+        {
+            return (layout[pos.row, pos.col] == 5);
+        }
 
     public Position RowColToTopLeft(Position p) {
       return new Position(p.row * BLOCK_SIZE + TOP_PAD, p.col * BLOCK_SIZE + BOUNDARY_PAD);
