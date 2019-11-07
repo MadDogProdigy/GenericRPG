@@ -49,7 +49,7 @@ namespace GenericRPG
 
         private void FrmMap_Load(object sender, EventArgs e)
         {
-            Reload("Resources/level.txt");
+            Reload("Resources/level.txt");//should handle cases of multiple levels
         }
 
         private void FrmMap_KeyDown(object sender, KeyEventArgs e)

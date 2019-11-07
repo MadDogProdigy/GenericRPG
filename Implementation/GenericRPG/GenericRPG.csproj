@@ -104,6 +104,9 @@
     <EmbeddedResource Include="FrmMap.resx">
       <DependentUpon>FrmMap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReward.resx">
+      <DependentUpon>FrmReward.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmStats.resx">
       <DependentUpon>FrmStats.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +141,17 @@
     <Content Include="Resources\levelup.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\reward1.bmp" />
+    <None Include="Resources\openChestStep1.bmp" />
+    <None Include="Resources\openChestStep2.png" />
+    <None Include="Resources\openChestStep1a.png" />
+    <None Include="Resources\openChest1b.png" />
+    <None Include="Resources\openChest2b.png" />
+    <None Include="Resources\openChest3b.png" />
+    <None Include="Resources\openChest4b.png" />
+    <None Include="Resources\openChest5b.png" />
+    <None Include="Resources\openChest6b.png" />
+    <Content Include="Resources\openChest.wav" />
     <Content Include="Resources\swing.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

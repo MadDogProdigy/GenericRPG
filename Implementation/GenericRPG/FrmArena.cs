@@ -86,6 +86,12 @@ namespace GenericRPG {
           FrmLevelUp frmLevelUp = new FrmLevelUp();
           frmLevelUp.Show();
         }
+        if(enemy.CoinDropped > 0)
+        {
+                    FrmReward frmReward = new FrmReward();
+                    frmReward.Amt = enemy.CoinDropped;
+                    frmReward.Show();
+        }
       }
       else {
         float prevPlayerHealth = character.Health;
