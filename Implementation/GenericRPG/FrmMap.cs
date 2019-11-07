@@ -118,6 +118,8 @@ namespace GenericRPG
                         frmBoss.Show();
                         break;
                     case Task.LEAVE_LEVEL:
+                        //this should give player option of which level to go to
+                        Game.GetGame().NextLevel();
                         break;
                     case Task.EXIT_GAME:
                         ExitGame();
