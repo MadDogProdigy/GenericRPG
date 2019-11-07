@@ -8,6 +8,8 @@ namespace GameLibrary
     {
         private const float MAX_XP_DROP = 120;
         private const float MIN_XP_DROP = 80;
+        private const int MIN_COIN_DROP = 25;
+        private const int MAX_COIN_DROP = 50;
 
         public Bitmap Img { get; private set; }
         public float XpDropped { get; private set; }
@@ -59,6 +61,7 @@ namespace GameLibrary
             }
 
             XpDropped = (float)rand.NextDouble() * (MAX_XP_DROP - MIN_XP_DROP) + MIN_XP_DROP;
+            CoinDropped = (int) Math.Round(rand.NextDouble() * (MAX_COIN_DROP - MIN_COIN_DROP) + MIN_COIN_DROP);
         }
 
     }
