@@ -22,8 +22,8 @@ namespace GameLibrary {
   public class Character : Mortal {
     public PictureBox Pic { get; private set; }
     private Position pos;
-    private Map map;
-    public float XP { get; private set; }
+    public Map map;
+    public float XP { get; set; }
     public bool ShouldLevelUp { get; private set; }
 
     /// <summary>

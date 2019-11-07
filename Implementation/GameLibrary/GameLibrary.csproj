@@ -52,6 +52,7 @@
     <Compile Include="Mortal.cs" />
     <Compile Include="MoveDir.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Save.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
