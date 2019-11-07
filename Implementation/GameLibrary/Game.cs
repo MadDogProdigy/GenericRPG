@@ -26,6 +26,7 @@ namespace GameLibrary {
 
     private Game() {
       State = GameState.LOADING;
+            Level = 1;
     }
 
     public static Game GetGame() {

@@ -114,6 +114,8 @@ namespace GenericRPG
                         }
                         break;
                     case Task.FIGHT_BOSS:
+                        FrmBossArena frmBoss = new FrmBossArena();
+                        frmBoss.Show();
                         break;
                     case Task.LEAVE_LEVEL:
                         break;
