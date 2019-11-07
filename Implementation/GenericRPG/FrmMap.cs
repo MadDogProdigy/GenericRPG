@@ -1,6 +1,7 @@
 ﻿using GameLibrary;
 using GenericRPG.Properties;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -87,12 +88,23 @@ namespace GenericRPG
                         Reload(savelines[0], savelines);
                     }
                     break;
-                    //case Keys.Q:
-                    //    DialogResult result = MessageBox.show("You are about to quit the game. Are you sure?","QUIT GAME",MessageBoxButtons.YesNo);
-                    //    if(result == DialogResult.Yes) {
-                    //        Game.Quit();
-                    //    }
-                    //    break;
+                case Keys.Q:
+                    DialogResult answer = MessageBox.Show("You are about to quit the game. Are you sure?", "QUIT GAME", MessageBoxButtons.YesNo);
+                    if (answer == DialogResult.Yes)
+                    {
+                        List<Form> openForms = new List<Form>();
+                        foreach (Form frm in Application.OpenForms)
+                        {
+                            openForms.Add(frm);
+                        }
+                        foreach (Form openForm in openForms)
+                        {
+                            if (openForm != this)
+                                openForm.Close();
+                        }
+                        Application.Exit();
+                    }
+                    break;
                     //case Keys.I:
                     //    Character.GetStats();
                     //    break;
