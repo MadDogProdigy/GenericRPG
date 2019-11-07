@@ -18,7 +18,9 @@ namespace GameLibrary
       save += character.Level + "\n";
       save += character.XP + "\n";
       save += character.Health + "\n";
-      save += character.Mana + "\n";
+      save += character.MaxMana + "\n";
+      save += character.Wallet + "\n";
+            //save charcter position as well
 
       File.WriteAllText("save.txt", save);
     }

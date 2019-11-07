@@ -17,9 +17,12 @@ namespace GameLibrary {
 
   public class Game {
     private static Game game;
+    private int NumLevels = 1;
 
     public Character Character { get; private set; }
     public GameState State { get; private set; }
+
+    public int Level { get; private set; }
 
     private Game() {
       State = GameState.LOADING;
@@ -38,5 +41,21 @@ namespace GameLibrary {
     public void SetCharacter(Character character) {
       Character = character;
     }
+
+    public void NextLevel()
+        {
+            if (Level != NumLevels)
+            {
+                Level++;
+            }
+        }
+
+        public void PreviousLevel()
+        {
+            if (Level != 1)
+            {
+                Level--;
+            }
+        }
   }
 }

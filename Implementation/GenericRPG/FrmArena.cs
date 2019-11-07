@@ -86,6 +86,12 @@ namespace GenericRPG {
           FrmLevelUp frmLevelUp = new FrmLevelUp();
           frmLevelUp.Show();
         }
+        if(enemy.CoinDropped > 0)
+        {
+                    FrmReward frmReward = new FrmReward();
+                    frmReward.Amt = enemy.CoinDropped;
+                    frmReward.Show();
+        }
       }
       else {
         float prevPlayerHealth = character.Health;
@@ -162,5 +168,42 @@ namespace GenericRPG {
         lblEnemyDamage.Top = 52;
       }
     }
-  }
+
+    private void FrmArena_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode) {
+                case Keys.A:
+                    btnSimpleAttack_Click(sender, e);
+                    break;
+                case Keys.S:
+                    FrmArena_Shortcuts_Click(sender,e);
+                    break;
+                case Keys.R:
+                    btnRun_Click(sender, e);
+                    break;
+                case Keys.W:
+                    btnUseWeapon_Click(sender, e);
+                    break;
+                ///case Keys.T:
+                ///character.weapon.ViewStats();
+                ///break;
+            }
+
+        }
+
+        private void FrmArena_Shortcuts_Click(object sender, EventArgs e)
+        {
+            String message = "The following shortcuts are available\n" +
+                             "and can be viewed by pressing S:" +
+                             "\tA\tAttack\n" +
+                             "\tR\tRun\n" +
+                             "\tW\tUseWeapon\n"; //\tT\tView Weapon Stats\n";
+            MessageBox.Show(message,"Shortcuts");
+        }
+
+        private void btnUseWeapon_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

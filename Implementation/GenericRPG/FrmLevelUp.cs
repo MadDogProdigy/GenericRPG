@@ -40,5 +40,5 @@ namespace GenericRPG {
       sp.Stop();
       Close();
     }
-  }
+    }
 }

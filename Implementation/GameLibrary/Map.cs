@@ -52,7 +52,7 @@ namespace GameLibrary {
         int j = 0;
         foreach (char c in mapLine) {
           int val = c - '0';
-          layout[i, j] = (val == 1 ? 1 : 0);
+          layout[i, j] = (val == 1 ? 1 : 0);//need to know where portals and bosses are
           PictureBox pb = CreateMapCell(val, LoadImg);
           if (pb != null) {
             pb.Top = top;
@@ -115,7 +115,7 @@ namespace GameLibrary {
         // next level
         case 3:
           result = new PictureBox() {
-            BackgroundImage = LoadImg("level2"),
+            BackgroundImage = LoadImg("level2"),//make this so based off current level
             BackgroundImageLayout = ImageLayout.Stretch,
             Width = BLOCK_SIZE,
             Height = BLOCK_SIZE
@@ -148,7 +148,8 @@ namespace GameLibrary {
     public bool IsValidPos(Position pos) {
       if (pos.row < 0 || pos.row >= NumRows ||
           pos.col < 0 || pos.col >= NumCols ||
-          layout[pos.row, pos.col] == 1) {
+          //layout[pos.row, pos.col] == 1) {
+          layout[pos.row,pos.col] != 0) { 
         return false;
       }
 
