@@ -149,6 +149,7 @@
     <None Include="Resources\openChest5b.png" />
     <None Include="Resources\openChest6b.png" />
     <Content Include="Resources\openChest.wav" />
+    <None Include="Resources\portal.gif" />
     <Content Include="Resources\swing.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
