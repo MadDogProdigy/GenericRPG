@@ -54,6 +54,12 @@
     <Compile Include="FrmArena.Designer.cs">
       <DependentUpon>FrmArena.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBossArena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBossArena.Designer.cs">
+      <DependentUpon>FrmBossArena.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCoinFrenzy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,19 +110,17 @@
     <EmbeddedResource Include="FrmMap.resx">
       <DependentUpon>FrmMap.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="obj\Debug\GenericRPG.FrmArena.resources" />
     <EmbeddedResource Include="obj\Debug\GenericRPG.FrmGameOver.resources" />
     <EmbeddedResource Include="obj\Debug\GenericRPG.FrmLevelUp.resources" />
     <EmbeddedResource Include="obj\Debug\GenericRPG.FrmMap.resources" />
     <EmbeddedResource Include="obj\Debug\GenericRPG.Properties.Resources.resources" />
-<EmbeddedResource Include="FrmReward.resx">
+    <EmbeddedResource Include="FrmReward.resx">
       <DependentUpon>FrmReward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStats.resx">
       <DependentUpon>FrmStats.cs</DependentUpon>
     </EmbeddedResource>
-    
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
