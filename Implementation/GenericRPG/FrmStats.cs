@@ -15,8 +15,6 @@ namespace GameLibrary
         public FrmStats()
         {
             InitializeComponent();
-            //disables the [X] button
-            this.ControlBox = false;
         }
 
         private void FrmStats_Load(object sender, EventArgs e)
@@ -25,8 +23,13 @@ namespace GameLibrary
             lblLevel.Text = character.Level.ToString();
             lblHealth.Text = ((float)Math.Round(character.Health)).ToString();
             lblMana.Text = ((float)Math.Round(character.Mana)).ToString();
-            lblStr.Text = ((float)Math.Round(character.Str)).ToString();
-            lblDef.Text = ((float)Math.Round(character.Def)).ToString();
+            lblPlayerStr.Text = ((float)Math.Round(character.Str)).ToString();
+            lblPlayerDef.Text = ((float)Math.Round(character.Def)).ToString();
+            lblWeaponStr.Text = "N/A";
+            lblWeaponDef.Text = "N/A";
+            //lblWeaponStr.Text = character.weapon.Str.ToString();
+            //lblWeaponDef.Text = character.weapon.Def.ToString();
+            lblWallet.Text = character.Wallet.ToString();
         }
     }
 }

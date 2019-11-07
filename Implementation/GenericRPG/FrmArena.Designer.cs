@@ -58,7 +58,7 @@ namespace GenericRPG {
             this.label13 = new System.Windows.Forms.Label();
             this.lblEnemyMana = new System.Windows.Forms.Label();
             this.btnSimpleAttack = new System.Windows.Forms.Button();
-            this.btnMagicAttack = new System.Windows.Forms.Button();
+            this.btnUseWeapon = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
             this.lblEndFightMessage = new System.Windows.Forms.Label();
             this.tmrPlayerDamage = new System.Windows.Forms.Timer(this.components);
@@ -443,16 +443,17 @@ namespace GenericRPG {
             this.btnSimpleAttack.UseVisualStyleBackColor = false;
             this.btnSimpleAttack.Click += new System.EventHandler(this.btnSimpleAttack_Click);
             // 
-            // btnMagicAttack
+            // btnUseWeapon
             // 
-            this.btnMagicAttack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnMagicAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMagicAttack.Location = new System.Drawing.Point(305, 202);
-            this.btnMagicAttack.Name = "btnMagicAttack";
-            this.btnMagicAttack.Size = new System.Drawing.Size(86, 46);
-            this.btnMagicAttack.TabIndex = 14;
-            this.btnMagicAttack.Text = "Magic Attack";
-            this.btnMagicAttack.UseVisualStyleBackColor = false;
+            this.btnUseWeapon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnUseWeapon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUseWeapon.Location = new System.Drawing.Point(305, 202);
+            this.btnUseWeapon.Name = "btnUseWeapon";
+            this.btnUseWeapon.Size = new System.Drawing.Size(86, 46);
+            this.btnUseWeapon.TabIndex = 14;
+            this.btnUseWeapon.Text = "Use Weapon";
+            this.btnUseWeapon.UseVisualStyleBackColor = false;
+            this.btnUseWeapon.Click += new System.EventHandler(this.btnUseWeapon_Click);
             // 
             // btnRun
             // 
@@ -513,7 +514,7 @@ namespace GenericRPG {
             this.ClientSize = new System.Drawing.Size(706, 501);
             this.Controls.Add(this.lblEndFightMessage);
             this.Controls.Add(this.btnRun);
-            this.Controls.Add(this.btnMagicAttack);
+            this.Controls.Add(this.btnUseWeapon);
             this.Controls.Add(this.btnSimpleAttack);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -566,7 +567,7 @@ namespace GenericRPG {
     private System.Windows.Forms.Label lblEnemyLevel;
     private System.Windows.Forms.Label label7;
     private System.Windows.Forms.Button btnSimpleAttack;
-    private System.Windows.Forms.Button btnMagicAttack;
+    private System.Windows.Forms.Button btnUseWeapon;
     private System.Windows.Forms.Button btnRun;
     private System.Windows.Forms.Label lblEndFightMessage;
     private System.Windows.Forms.Label label5;

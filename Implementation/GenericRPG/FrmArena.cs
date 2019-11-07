@@ -175,16 +175,29 @@ namespace GenericRPG {
                 case Keys.R:
                     btnRun_Click(sender, e);
                     break;
+                case Keys.W:
+                    btnUseWeapon_Click(sender, e);
+                    break;
+                ///case Keys.T:
+                ///character.weapon.ViewStats();
+                ///break;
             }
 
         }
 
         private void FrmArena_Shortcuts_Click(object sender, EventArgs e)
         {
-            String message = "The following shortcuts are available:\n" +
+            String message = "The following shortcuts are available\n" +
+                             "and can be viewed by pressing S:" +
                              "\tA\tAttack\n" +
-                             "\tR\tRun\n";
+                             "\tR\tRun\n" +
+                             "\tW\tUseWeapon\n"; //\tT\tView Weapon Stats\n";
             MessageBox.Show(message,"Shortcuts");
+        }
+
+        private void btnUseWeapon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

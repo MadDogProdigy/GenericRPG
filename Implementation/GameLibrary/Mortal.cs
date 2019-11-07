@@ -25,8 +25,8 @@ namespace GameLibrary {
     public float MaxHealth { get; protected set; }
     public float Health { get; set; }
     public float MaxMana { get; protected set; }
-    public float Mana { get; set; }
-    public float Str { get; protected set; }
+        public float Mana { get; set; }
+        public float Str { get; protected set; }
     public float Def { get; protected set; }
     public float Luck { get; protected set; }
     public float Speed { get; protected set; }

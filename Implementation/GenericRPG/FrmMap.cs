@@ -105,9 +105,10 @@ namespace GenericRPG
                         Application.Exit();
                     }
                     break;
-                    //case Keys.I:
-                    //    Character.GetStats();
-                    //    break;
+                case Keys.I:
+                    FrmStats stats = new FrmStats();
+                    stats.Show();
+                    break;
             }
             if (dir != MoveDir.NO_MOVE)
             {
