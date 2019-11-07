@@ -33,7 +33,7 @@ namespace GenericRPG
         public void FrmReward_Load(object sender,EventArgs e)
         {
             //create chest opening sound effect
-            sp = new SoundPlayer(@"Resources\openChest.wav");
+            sp = new SoundPlayer(Properties.Resources.openChest);
             //make more dynamic
             backgrounds.Add(Properties.Resources.openChest1b);
             backgrounds.Add(Properties.Resources.openChest2b);
@@ -61,6 +61,7 @@ namespace GenericRPG
             }else
             {
                 this.timerChangeImg.Stop();
+                sp.Stop();
                 this.pnlRewardMsg.Visible = true;
                 Refresh();
                 Thread.Sleep(1200);

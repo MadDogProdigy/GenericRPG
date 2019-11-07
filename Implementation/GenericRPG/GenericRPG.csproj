@@ -142,9 +142,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\reward1.bmp" />
-    <None Include="Resources\openChestStep1.bmp" />
-    <None Include="Resources\openChestStep2.png" />
-    <None Include="Resources\openChestStep1a.png" />
     <None Include="Resources\openChest1b.png" />
     <None Include="Resources\openChest2b.png" />
     <None Include="Resources\openChest3b.png" />
