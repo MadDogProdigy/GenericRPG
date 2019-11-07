@@ -13,6 +13,7 @@ namespace GameLibrary
 
         public Bitmap Img { get; private set; }
         public float XpDropped { get; private set; }
+        public int CoinDropped { get; private set; }
 
         private static readonly Random rand = new Random();
         private static string name;
