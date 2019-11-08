@@ -61,6 +61,14 @@ namespace GameLibrary
             }
         }
 
+        public void GetMoney(int amount)
+        {
+            if(amount > 0)
+            {
+                Wallet += amount;
+            }
+        }
+
         public override void LevelUp()
         {
             base.LevelUp();
