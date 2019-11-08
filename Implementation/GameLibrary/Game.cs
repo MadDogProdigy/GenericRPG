@@ -13,12 +13,12 @@ namespace GameLibrary {
     FIGHTING,
     DEAD,
     BOSS_FIGHT,
-        COIN_HUNT,
+    COIN_HUNT,
     }
 
   public class Game {
     private static Game game;
-    private int NumLevels = 1;
+    private int NumLevels = 5;
 
     public Character Character { get; private set; }
     public GameState State { get; private set; }
@@ -49,6 +49,7 @@ namespace GameLibrary {
             if (Level < NumLevels)
             {
                 Level++;
+
             }
         }
 

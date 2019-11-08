@@ -39,7 +39,32 @@ namespace GenericRPG
                 character.Health = float.Parse(savelines[3]);
                 character.Mana = float.Parse(savelines[4]);
                 character.XP = float.Parse(savelines[2]);
+                character.GetMoney(int.Parse(savelines[5]));
             }
+
+            game.SetCharacter(character);
+
+            rand = new Random();
+            encounterChance = 0.15;
+        }
+
+        public void ChangeMap(string level, Character charact)
+        {
+            game = Game.GetGame();
+            grpMap.Controls.Clear(); // clear out the tiles
+
+            map = new Map();
+            character = map.LoadMap(level, grpMap,
+              str => Resources.ResourceManager.GetObject(str) as Bitmap
+            );
+            Width = grpMap.Width + 25;
+            Height = grpMap.Height + 50;
+
+            character.SetLevel(charact.Level);
+            character.Health = charact.Health;
+            character.Mana = charact.Mana;
+            character.XP = charact.XP;
+            character.GetMoney(charact.Wallet);
 
             game.SetCharacter(character);
 
@@ -49,7 +74,6 @@ namespace GenericRPG
 
         private void FrmMap_Load(object sender, EventArgs e)
         {
-            //Reload("Resources/level"+Game.GetGame().Level+".txt");//should handle cases of multiple levels
             Reload("Resources/level1.txt");
         }
 
@@ -125,7 +149,13 @@ namespace GenericRPG
                         break;
                     case Task.LEAVE_LEVEL:
                         //this should give player option of which level to go to
+                        int currentLevel = Game.GetGame().Level;
                         Game.GetGame().NextLevel();
+                        if(currentLevel != Game.GetGame().Level)
+                        {
+
+                            ChangeMap("Resources/level" + Game.GetGame().Level + ".txt",Game.GetGame().Character);
+                        }
                         break;
                     case Task.EXIT_GAME:
                         ExitGame();

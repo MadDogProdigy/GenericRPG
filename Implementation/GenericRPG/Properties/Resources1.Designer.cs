@@ -91,17 +91,13 @@ namespace GenericRPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1111111111111111111111111111111111111111111111111
-        ///1000000000000000000000000000000000000000000000001
-        ///1000000000000000000000000000000000000000000000001
-        ///1000000000000000000000000000000000000000000000001
-        ///1000000000000000000000000000000000000000000000001
-        ///1000000000000000000000000000000000000000000000001
-        ///1000000000000000000000000000000000000000000000001
-        ///1000000000000000000000000000000000000000000000001
-        ///1000000000000000000000000000000000000000000000001
-        ///1000000000000000000000000000000000000000000000001
-        ///10 [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to 11111111111111
+        ///12000600000001
+        ///10000000600001
+        ///10000000000001
+        ///10000000000001
+        ///10600000000001
+        ///11111111111111.
         /// </summary>
         internal static string coinHunt {
             get {
@@ -180,20 +176,62 @@ namespace GenericRPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 111111111111111
-        ///100013140000001
-        ///100010111111001
-        ///101010100001001
-        ///101110100001001
-        ///100000100000011
-        ///100011100000111
-        ///111000000011111
-        ///150000000000001
-        ///111111111111111.
+        ///   Looks up a localized string similar to 11111111111
+        ///12001314001
+        ///10001011101
+        ///10111010101
+        ///10000000001
+        ///15001110011
+        ///11111111111.
         /// </summary>
         internal static string level21 {
             get {
                 return ResourceManager.GetString("level21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 11111111111
+        ///11050141011
+        ///11010101011
+        ///12000000031
+        ///11110111011
+        ///11110111011
+        ///11111111111.
+        /// </summary>
+        internal static string level3 {
+            get {
+                return ResourceManager.GetString("level3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 11111111111
+        ///12000000031
+        ///10110100011
+        ///10000100001
+        ///11100101001
+        ///15000000041
+        ///11111111111.
+        /// </summary>
+        internal static string level4 {
+            get {
+                return ResourceManager.GetString("level4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 11111111111
+        ///10000000051
+        ///10011111111
+        ///12011111111
+        ///10011111111
+        ///10000000041
+        ///11111111111.
+        /// </summary>
+        internal static string level5 {
+            get {
+                return ResourceManager.GetString("level5", resourceCulture);
             }
         }
         

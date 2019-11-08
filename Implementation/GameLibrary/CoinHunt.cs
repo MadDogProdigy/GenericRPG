@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace GameLibrary
 {
-    public class CoinHunt : Map
+    public class CoinHunt
     {
         private int[,] layout;
         private Random rand;
@@ -14,12 +14,12 @@ namespace GameLibrary
         private const int BOUNDARY_PAD = 5;
         private const int BLOCK_SIZE = 50;
 
-        public new int CharacterStartRow { get; private set; }
-        public new int CharacterStartCol { get; private set; }
+        public int CharacterStartRow { get; private set; }
+        public int CharacterStartCol { get; private set; }
         private int NumRows { get { return layout.GetLength(0); } }
         private int NumCols { get { return layout.GetLength(1); } }
 
-        public new string LevelName { get; private set; }
+        public string LevelName { get; private set; }
 
         /// <summary>
         /// 
@@ -28,14 +28,15 @@ namespace GameLibrary
         /// <param name="grpMap"></param>
         /// <param name="LoadImg"></param>
         /// <returns></returns>
-        public Character LoadMap(GroupBox grpMap, Func<string, Bitmap> LoadImg)
+        public void LoadMap(GroupBox grpMap, Func<string, Bitmap> LoadImg)
         {
+            rand = new Random();
             LevelName = "Resources/coinHunt.txt";
 
             // declare and initialize locals
             int top = TOP_PAD;
             int left = BOUNDARY_PAD;
-            Character character = null;
+            Character character = Game.GetGame().Character;
             List<string> mapLines = new List<string>();
 
             // read from map file
@@ -77,9 +78,9 @@ namespace GameLibrary
                     }
                     if (val == 2)
                     {
-                        CharacterStartRow = i;
-                        CharacterStartCol = j;
-                        character = new Character(pb, new Position(i, j), this);
+                        //CharacterStartRow = i;
+                        //CharacterStartCol = j;
+                        character.BackToStart();
                     }
                     left += BLOCK_SIZE;
                     j++;
@@ -97,9 +98,6 @@ namespace GameLibrary
 
             // initialize for game
             Game.GetGame().ChangeState(GameState.COIN_HUNT);
-
-            // return Character object from reading map
-            return character;
         }
 
         private PictureBox CreateMapCell(int legendValue, Func<string, Bitmap> LoadImg)

@@ -306,6 +306,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Player Stats";
             this.Load += new System.EventHandler(this.FrmStats_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmStats_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

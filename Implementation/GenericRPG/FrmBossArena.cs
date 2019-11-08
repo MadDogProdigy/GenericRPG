@@ -135,9 +135,6 @@ namespace GenericRPG
                     game.ChangeState(GameState.DEAD);
                     lblEndFightMessage.Text = "You Were Defeated!";
                     lblEndFightMessage.Visible = true;
-                    //delet this but
-                    FrmCoinFrenzy frmCoinFrenzy = new FrmCoinFrenzy();
-                    frmCoinFrenzy.Show();
                     Refresh();
                     Thread.Sleep(1200);
                     EndFight();

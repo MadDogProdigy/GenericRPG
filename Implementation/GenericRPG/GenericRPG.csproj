@@ -157,6 +157,10 @@
     <None Include="Resources\wall.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Resources\level3.txt" />
+    <Content Include="bin\Debug\Resources\level4.txt" />
+    <Content Include="bin\Debug\Resources\level5.txt" />
+    <Content Include="bin\Debug\Resources\money.png" />
     <Content Include="obj\Debug\GenericRPG.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TempPE\Properties.Resources1.Designer.cs.dll" />
     <None Include="Resources\coinHunt.txt" />
@@ -164,6 +168,9 @@
     <Content Include="Resources\FinalBoss.png" />
     <Content Include="Resources\FireElemental.png" />
     <None Include="Resources\level2.txt" />
+    <None Include="Resources\level3.txt" />
+    <None Include="Resources\level4.txt" />
+    <None Include="Resources\level5.txt" />
     <Content Include="Resources\levelup.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -194,7 +201,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\Resources\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Release\" />
   </ItemGroup>
