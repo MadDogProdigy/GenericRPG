@@ -90,6 +90,7 @@ namespace GenericRPG {
         {
                     FrmReward frmReward = new FrmReward();
                     frmReward.Amt = enemy.CoinDropped;
+                    character.GetMoney(enemy.CoinDropped);
                     frmReward.Show();
         }
       }

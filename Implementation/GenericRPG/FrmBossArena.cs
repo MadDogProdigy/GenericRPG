@@ -50,7 +50,7 @@ namespace GenericRPG
                     boss = new Boss((22), Resources.FireElemental);
                     break;
                 case 4:
-                    boss = new Boss((29), Resources.EarthElemental);
+                    boss = new Boss((29), Resources.EartElemental);
                     break;
                 case 5:
                     boss = new Boss((36), Resources.FinalBoss);
@@ -112,12 +112,14 @@ namespace GenericRPG
                     FrmLevelUp frmLevelUp = new FrmLevelUp();
                     frmLevelUp.Show();
                 }
-                if (boss.CoinDropped > 0)
-                {
-                    FrmReward frmReward = new FrmReward();
-                    frmReward.Amt = boss.CoinDropped;
-                    frmReward.Show();
-                }
+                //if (boss.CoinDropped > 0)
+                //{
+                //    FrmReward frmReward = new FrmReward();
+                //    frmReward.Amt = boss.CoinDropped;
+                //    frmReward.Show();
+                //}
+                FrmCoinFrenzy frmCF = new FrmCoinFrenzy();
+                frmCF.Show();
             }
             else
             {
@@ -133,6 +135,9 @@ namespace GenericRPG
                     game.ChangeState(GameState.DEAD);
                     lblEndFightMessage.Text = "You Were Defeated!";
                     lblEndFightMessage.Visible = true;
+                    //delet this but
+                    FrmCoinFrenzy frmCoinFrenzy = new FrmCoinFrenzy();
+                    frmCoinFrenzy.Show();
                     Refresh();
                     Thread.Sleep(1200);
                     EndFight();

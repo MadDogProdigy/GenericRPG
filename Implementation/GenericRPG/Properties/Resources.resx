@@ -127,11 +127,23 @@
   <data name="character_levelup_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\character-levelup-animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="coinHunt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coinHunt.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="EartElemental" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EartElemental.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="enemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\enemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fightboss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fightboss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FinalBoss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FinalBoss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireElemental" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireElemental.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gameover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gameover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,5 +183,11 @@
   </data>
   <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WaterElemental" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WaterElemental.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindElemental" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WindElemental.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

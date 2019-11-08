@@ -91,6 +91,35 @@ namespace GenericRPG.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1111111111111111111111111111111111111111111111111
+        ///1000000000000000000000000000000000000000000000001
+        ///1000000000000000000000000000000000000000000000001
+        ///1000000000000000000000000000000000000000000000001
+        ///1000000000000000000000000000000000000000000000001
+        ///1000000000000000000000000000000000000000000000001
+        ///1000000000000000000000000000000000000000000000001
+        ///1000000000000000000000000000000000000000000000001
+        ///1000000000000000000000000000000000000000000000001
+        ///1000000000000000000000000000000000000000000000001
+        ///10 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string coinHunt {
+            get {
+                return ResourceManager.GetString("coinHunt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EartElemental {
+            get {
+                object obj = ResourceManager.GetObject("EartElemental", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap enemy {
@@ -106,6 +135,26 @@ namespace GenericRPG.Properties {
         internal static System.Drawing.Bitmap fightboss {
             get {
                 object obj = ResourceManager.GetObject("fightboss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FinalBoss {
+            get {
+                object obj = ResourceManager.GetObject("FinalBoss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FireElemental {
+            get {
+                object obj = ResourceManager.GetObject("FireElemental", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +292,26 @@ namespace GenericRPG.Properties {
         internal static System.Drawing.Bitmap wall {
             get {
                 object obj = ResourceManager.GetObject("wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WaterElemental {
+            get {
+                object obj = ResourceManager.GetObject("WaterElemental", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WindElemental {
+            get {
+                object obj = ResourceManager.GetObject("WindElemental", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

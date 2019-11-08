@@ -152,7 +152,7 @@ namespace GameLibrary
 
         private void addCoin()
         {
-            int row = rand.NextDouble()
+            
         }
 
         private void removeCoin() { 

@@ -18,7 +18,6 @@ namespace GenericRPG
         private Map map;
         private Game game;
         private Random rand;
-        private double encounterChance; //might not need
 
         public FrmCoinFrenzy()
         {
@@ -29,7 +28,7 @@ namespace GenericRPG
         {
             game = Game.GetGame();
             grpCoins.Controls.Clear();
-            map = new Map();
+            map = new CoinHunt();
             character = map.LoadMap("Resources/coinHunt.txt", grpCoins,
                 str => Resources.ResourceManager.GetObject(str) as Bitmap
                 );
@@ -68,6 +67,7 @@ namespace GenericRPG
             {// tell the character to move and check if the move was valid
                 if (character.Move(dir) == Task.GRAB_COIN)
                 {
+                    character.GetMoney(2);
                 }
             }
             }
