@@ -110,6 +110,9 @@
     <EmbeddedResource Include="FrmArena.resx">
       <DependentUpon>FrmArena.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCoinFrenzy.resx">
+      <DependentUpon>FrmCoinFrenzy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGameOver.resx">
       <DependentUpon>FrmGameOver.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,12 +166,20 @@
     <None Include="Resources\wall.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Resources\level3.txt" />
+    <Content Include="bin\Debug\Resources\level4.txt" />
+    <Content Include="bin\Debug\Resources\level5.txt" />
+    <Content Include="bin\Debug\Resources\money.png" />
     <Content Include="obj\Debug\GenericRPG.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TempPE\Properties.Resources1.Designer.cs.dll" />
-    <Content Include="Resources\EarthElemental.png" />
+    <None Include="Resources\coinHunt.txt" />
+    <Content Include="Resources\EartElemental.png" />
     <Content Include="Resources\FinalBoss.png" />
     <Content Include="Resources\FireElemental.png" />
-    <Content Include="Resources\chest.png" />
+    <None Include="Resources\level2.txt" />
+    <None Include="Resources\level3.txt" />
+    <None Include="Resources\level4.txt" />
+    <None Include="Resources\level5.txt" />
     <Content Include="Resources\levelup.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -179,6 +190,7 @@
     <None Include="Resources\openChest4b.png" />
     <None Include="Resources\openChest5b.png" />
     <None Include="Resources\openChest6b.png" />
+    <None Include="Resources\money.png" />
     <Content Include="Resources\openChest.wav" />
     <None Include="Resources\portal.gif" />
     <Content Include="Resources\swing.wav">
@@ -195,12 +207,11 @@
     <None Include="Resources\gameover.jpg" />
     <None Include="Resources\character-levelup.jpg" />
     <None Include="Resources\character-levelup-animation.gif" />
-    <Content Include="Resources\level.txt">
+    <Content Include="Resources\level1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\Resources\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Release\" />
   </ItemGroup>

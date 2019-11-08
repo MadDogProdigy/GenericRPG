@@ -100,6 +100,31 @@ namespace GenericRPG.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 11111111111111
+        ///12000600000001
+        ///10000000600001
+        ///10000000000001
+        ///10000000000001
+        ///10600000000001
+        ///11111111111111.
+        /// </summary>
+        internal static string coinHunt {
+            get {
+                return ResourceManager.GetString("coinHunt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EartElemental {
+            get {
+                object obj = ResourceManager.GetObject("EartElemental", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap chest {
@@ -176,6 +201,66 @@ namespace GenericRPG.Properties {
             get {
                 object obj = ResourceManager.GetObject("level2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 11111111111
+        ///12001314001
+        ///10001011101
+        ///10111010101
+        ///10000000001
+        ///15001110011
+        ///11111111111.
+        /// </summary>
+        internal static string level21 {
+            get {
+                return ResourceManager.GetString("level21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 11111111111
+        ///11050141011
+        ///11010101011
+        ///12000000031
+        ///11110111011
+        ///11110111011
+        ///11111111111.
+        /// </summary>
+        internal static string level3 {
+            get {
+                return ResourceManager.GetString("level3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 11111111111
+        ///12000000031
+        ///10110100011
+        ///10000100001
+        ///11100101001
+        ///15000000041
+        ///11111111111.
+        /// </summary>
+        internal static string level4 {
+            get {
+                return ResourceManager.GetString("level4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 11111111111
+        ///10000000051
+        ///10011111111
+        ///12011111111
+        ///10011111111
+        ///10000000041
+        ///11111111111.
+        /// </summary>
+        internal static string level5 {
+            get {
+                return ResourceManager.GetString("level5", resourceCulture);
             }
         }
         

@@ -50,7 +50,7 @@ namespace GenericRPG
                     boss = new Boss((22), Resources.FireElemental);
                     break;
                 case 4:
-                    boss = new Boss((29), Resources.EarthElemental);
+                    boss = new Boss((29), Resources.EartElemental);
                     break;
                 case 5:
                     boss = new Boss((36), Resources.FinalBoss);
@@ -112,11 +112,16 @@ namespace GenericRPG
                     FrmLevelUp frmLevelUp = new FrmLevelUp();
                     frmLevelUp.Show();
                 }
-                if (boss.CoinDropped > 0)
+                Refresh();
+                Thread.Sleep(1200);
+                DialogResult result = MessageBox.Show("Congratulations on beating the boss!\n You are about to enter a 'coin frenzy' period.\n" +
+                    "You will have 60 seconds to collect as many coins as possible . . . in the DARK! Good LUCK!","Announcement",MessageBoxButtons.OK);
+                
+                if(result == DialogResult.OK)
                 {
-                    FrmReward frmReward = new FrmReward();
-                    frmReward.Amt = boss.CoinDropped;
-                    frmReward.Show();
+
+                    FrmCoinFrenzy frmCF = new FrmCoinFrenzy();
+                    frmCF.Show();
                 }
             }
             else

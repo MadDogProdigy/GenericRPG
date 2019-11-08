@@ -65,5 +65,15 @@ namespace GameLibrary
                 lblWeaponDef.Text = character.WeaponDef.ToString();
             }
         }
+
+        private void FrmStats_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode) {
+                case Keys.X:
+                    Close();
+                    break;
+            }
+
+        }
     }
 }

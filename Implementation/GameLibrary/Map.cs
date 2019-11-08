@@ -33,20 +33,21 @@ namespace GameLibrary {
       int left = BOUNDARY_PAD;
       Character character = null;
       List<string> mapLines = new List<string>();
-
-      // read from map file
-      using (FileStream fs = new FileStream(mapFile, FileMode.Open)) {
-        using (StreamReader sr = new StreamReader(fs)) {
-          string line = sr.ReadLine();
-          while (line != null) {
-            mapLines.Add(line);
-            line = sr.ReadLine();
-          }
-        }
-      }
-
-      // load map file into layout and create PictureBox objects
-      layout = new int[mapLines.Count, mapLines[0].Length];
+            // read from map file
+            using (FileStream fs = new FileStream(mapFile, FileMode.Open))
+            {
+                using (StreamReader sr = new StreamReader(fs))
+                {
+                    string line = sr.ReadLine();
+                    while (line != null)
+                    {
+                        mapLines.Add(line);
+                        line = sr.ReadLine();
+                    }
+                }
+            }
+            // load map file into layout and create PictureBox objects
+            layout = new int[mapLines.Count, mapLines[0].Length];
       int i = 0;
       foreach (string mapLine in mapLines) {
         int j = 0;
