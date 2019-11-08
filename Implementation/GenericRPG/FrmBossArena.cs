@@ -112,14 +112,17 @@ namespace GenericRPG
                     FrmLevelUp frmLevelUp = new FrmLevelUp();
                     frmLevelUp.Show();
                 }
-                //if (boss.CoinDropped > 0)
-                //{
-                //    FrmReward frmReward = new FrmReward();
-                //    frmReward.Amt = boss.CoinDropped;
-                //    frmReward.Show();
-                //}
-                FrmCoinFrenzy frmCF = new FrmCoinFrenzy();
-                frmCF.Show();
+                Refresh();
+                Thread.Sleep(1200);
+                DialogResult result = MessageBox.Show("Congratulations on beating the boss!\n You are about to enter a 'coin frenzy' period.\n" +
+                    "You will have 60 seconds to collect as many coins as possible . . . in the DARK! Good LUCK!","Announcement",MessageBoxButtons.OK);
+                
+                if(result == DialogResult.OK)
+                {
+
+                    FrmCoinFrenzy frmCF = new FrmCoinFrenzy();
+                    frmCF.Show();
+                }
             }
             else
             {

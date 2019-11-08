@@ -30,7 +30,7 @@ namespace GenericRPG
             InitializeComponent();
             timeLeft = 60;
             encounterChance = 0;
-            timeLabel.Text = " 60 seconds";
+            timeLabel.Text = "60 seconds";
         }
 
         public void FrmCoinFrenzy_Load(object sender, EventArgs e)
