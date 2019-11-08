@@ -50,7 +50,7 @@ namespace GenericRPG
                     boss = new Boss((22), Resources.FireElemental);
                     break;
                 case 4:
-                    boss = new Boss((29), Resources.EartElemental);
+                    boss = new Boss((29), Resources.EarthElemental);
                     break;
                 case 5:
                     boss = new Boss((36), Resources.FinalBoss);
