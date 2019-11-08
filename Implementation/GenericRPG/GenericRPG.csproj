@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Class1.cs" />
     <EmbeddedResource Include="FrmArena.resx">
       <DependentUpon>FrmArena.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +160,7 @@
     <Content Include="Resources\EartElemental.png" />
     <Content Include="Resources\FinalBoss.png" />
     <Content Include="Resources\FireElemental.png" />
+    <None Include="Resources\level2.txt" />
     <Content Include="Resources\levelup.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -169,6 +171,7 @@
     <None Include="Resources\openChest4b.png" />
     <None Include="Resources\openChest5b.png" />
     <None Include="Resources\openChest6b.png" />
+    <None Include="Resources\money.png" />
     <Content Include="Resources\openChest.wav" />
     <None Include="Resources\portal.gif" />
     <Content Include="Resources\swing.wav">
@@ -183,7 +186,7 @@
     <None Include="Resources\gameover.jpg" />
     <None Include="Resources\character-levelup.jpg" />
     <None Include="Resources\character-levelup-animation.gif" />
-    <Content Include="Resources\level.txt">
+    <Content Include="Resources\level1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

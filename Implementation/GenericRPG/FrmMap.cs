@@ -49,7 +49,8 @@ namespace GenericRPG
 
         private void FrmMap_Load(object sender, EventArgs e)
         {
-            Reload("Resources/level.txt");//should handle cases of multiple levels
+            //Reload("Resources/level"+Game.GetGame().Level+".txt");//should handle cases of multiple levels
+            Reload("Resources/level1.txt");
         }
 
         private void FrmMap_KeyDown(object sender, KeyEventArgs e)
@@ -112,6 +113,11 @@ namespace GenericRPG
                         {
                             encounterChance += 0.10;
                         }
+                        if (game.State == GameState.FIGHTING)
+                        {
+                            FrmArena frmArena = new FrmArena();
+                            frmArena.Show();
+                        }
                         break;
                     case Task.FIGHT_BOSS:
                         FrmBossArena frmBoss = new FrmBossArena();
@@ -125,11 +131,7 @@ namespace GenericRPG
                         ExitGame();
                         break;
                 }
-                if (game.State == GameState.FIGHTING)
-                {
-                    FrmArena frmArena = new FrmArena();
-                    frmArena.Show();
-                }
+                
             }
         }
     

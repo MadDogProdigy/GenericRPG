@@ -131,6 +131,24 @@ namespace GenericRPG.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 111111111111111
+        ///100013140000001
+        ///100010111111001
+        ///101010100001001
+        ///101110100001001
+        ///100000100000011
+        ///100011100000111
+        ///111000000011111
+        ///150000000000001
+        ///111111111111111.
+        /// </summary>
+        internal static string level21 {
+            get {
+                return ResourceManager.GetString("level21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream openChest {
@@ -225,66 +243,6 @@ namespace GenericRPG.Properties {
         internal static System.Drawing.Bitmap wall {
             get {
                 object obj = ResourceManager.GetObject("wall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap EarthElemental
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("EarthElemental", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WaterElemental
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("WaterElemental", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WindElemental
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("WindElemental", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FireElemental
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("FireElemental", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FinalBoss
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("FinalBoss", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -45,7 +45,7 @@ namespace GameLibrary {
 
     public void NextLevel()
         {
-            if (Level != NumLevels)
+            if (Level < NumLevels)
             {
                 Level++;
             }
@@ -53,7 +53,7 @@ namespace GameLibrary {
 
         public void PreviousLevel()
         {
-            if (Level != 1)
+            if (Level > 1)
             {
                 Level--;
             }
