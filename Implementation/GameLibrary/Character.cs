@@ -49,6 +49,12 @@ namespace GameLibrary
             ShouldLevelUp = false;
         }
 
+        public void GainCoin(int coins)
+        {
+            Wallet += coins;
+
+        }
+
         public void GainXP(float amount)
         {
             XP += amount;
@@ -62,14 +68,6 @@ namespace GameLibrary
         public void GetMoney(int amount)
         {
             if (amount > 0)
-            {
-                Wallet += amount;
-            }
-        }
-
-        public void GetMoney(int amount)
-        {
-            if(amount > 0)
             {
                 Wallet += amount;
             }
