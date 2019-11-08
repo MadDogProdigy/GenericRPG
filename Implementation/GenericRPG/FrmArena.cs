@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Media;
 using System.Threading;
 using System.Windows.Forms;
+using GenericRPG;
 
 namespace GenericRPG {
   public partial class FrmArena : Form {
@@ -13,8 +14,10 @@ namespace GenericRPG {
     private Enemy enemy;
     private Random rand;
     private SoundPlayer sp;
+    private int usedWeapon;
+    
 
-    public FrmArena() {
+        public FrmArena() {
       InitializeComponent();
 
       // disables the [X] button
@@ -68,54 +71,77 @@ namespace GenericRPG {
     private void btnSimpleAttack_Click(object sender, EventArgs e) {
       // make swing noise
       sp.Play();
-
+      
       float prevEnemyHealth = enemy.Health;
       character.SimpleAttack(enemy);
       float enemyDamage = (float)Math.Round(prevEnemyHealth - enemy.Health);
       lblEnemyDamage.Text = enemyDamage.ToString();
       lblEnemyDamage.Visible = true;
       tmrEnemyDamage.Enabled = true;
-      if (enemy.Health <= 0) {
-        character.GainXP(enemy.XpDropped);
-        lblEndFightMessage.Text = "You Gained " + Math.Round(enemy.XpDropped) + " xp!";
-        lblEndFightMessage.Visible = true;
-        Refresh();
-        Thread.Sleep(1200);
-        EndFight();
-        if (character.ShouldLevelUp) {
-          FrmLevelUp frmLevelUp = new FrmLevelUp();
-          frmLevelUp.Show();
-        }
-        if(enemy.CoinDropped > 0)
-        {
+            if (enemy.Health <= 0)
+            {
+                character.GainXP(enemy.XpDropped);
+                lblEndFightMessage.Text = "You Gained " + Math.Round(enemy.XpDropped) + " xp!";
+                lblEndFightMessage.Visible = true;
+
+                Refresh();
+                Thread.Sleep(1200);
+                EndFight();
+                if (character.ShouldLevelUp)
+                {
+
+                    FrmLevelUp frmLevelUp = new FrmLevelUp();
+                    frmLevelUp.Show();
+                }
+                if (character.DidDrop() == true & character.HasWeapon == false)
+                {
+
+                    FrmDrop frmDrop = new FrmDrop();
+                    frmDrop.Show();
+                    frmDrop.Refresh();
+                    Thread.Sleep(3000);
+                    frmDrop.sp.Stop();
+                    frmDrop.Hide();
+                    character.HasWeapon = true;
+
+                }
+
+                if (enemy.CoinDropped > 0)
+                {
                     FrmReward frmReward = new FrmReward();
                     frmReward.Amt = enemy.CoinDropped;
                     character.GetMoney(enemy.CoinDropped);
                     frmReward.Show();
-        }
-      }
-      else {
-        float prevPlayerHealth = character.Health;
-        enemy.SimpleAttack(character);
-        float playerDamage = (float)Math.Round(prevPlayerHealth - character.Health);
-        lblPlayerDamage.Text = playerDamage.ToString();
-        lblPlayerDamage.Visible = true;
-        tmrPlayerDamage.Enabled = true;
-        if (character.Health <= 0) {
-          UpdateStats();
-          game.ChangeState(GameState.DEAD);
-          lblEndFightMessage.Text = "You Were Defeated!";
-          lblEndFightMessage.Visible = true;
-          Refresh();
-          Thread.Sleep(1200);
-          EndFight();
-          FrmGameOver frmGameOver = new FrmGameOver();
-          frmGameOver.Show();
-        }
-        else {
-          UpdateStats();
-        }
-      }
+                }
+
+                
+            }
+            else
+            {
+                float prevPlayerHealth = character.Health;
+                enemy.SimpleAttack(character);
+                float playerDamage = (float)Math.Round(prevPlayerHealth - character.Health);
+                lblPlayerDamage.Text = playerDamage.ToString();
+                lblPlayerDamage.Visible = true;
+                tmrPlayerDamage.Enabled = true;
+                if (character.Health <= 0)
+                {
+                    UpdateStats();
+                    game.ChangeState(GameState.DEAD);
+                    lblEndFightMessage.Text = "You Were Defeated!";
+                    lblEndFightMessage.Visible = true;
+                    character.HasWeapon = false;
+                    Refresh();
+                    Thread.Sleep(1200);
+                    EndFight();
+                    FrmGameOver frmGameOver = new FrmGameOver();
+                    frmGameOver.Show();
+                }
+                else
+                {
+                    UpdateStats();
+                }
+            }
     }
     private void btnRun_Click(object sender, EventArgs e) {
       if (rand.NextDouble() < 0.25) {
@@ -205,6 +231,83 @@ namespace GenericRPG {
         private void btnUseWeapon_Click(object sender, EventArgs e)
         {
 
+            if (usedWeapon < 1 & character.HasWeapon==true)
+            {
+                SoundPlayer wp = new SoundPlayer(Resources.weapon);
+                wp.Play();
+                Thread.Sleep(3000);
+                float prevEnemyHealth = enemy.Health;
+                character.WeaponAttack(enemy);
+                float enemyDamage = (float)Math.Round(prevEnemyHealth - enemy.Health);
+                lblEnemyDamage.Text = enemyDamage.ToString();
+                lblEnemyDamage.Visible = true;
+                tmrEnemyDamage.Enabled = true;
+                UpdateStats();
+                if (enemy.Health <= 0)
+                {
+                    character.GainXP(enemy.XpDropped);
+                    lblEndFightMessage.Text = "You Gained " + Math.Round(enemy.XpDropped) + " xp!";
+                    lblEndFightMessage.Visible = true;
+
+                    Refresh();
+                    Thread.Sleep(1200);
+                    EndFight();
+                    if (character.ShouldLevelUp)
+                    {
+
+                        FrmLevelUp frmLevelUp = new FrmLevelUp();
+                        frmLevelUp.Show();
+                    }
+                    if (character.DidDrop() == true & character.HasWeapon == false)
+                    {
+                        character.HasWeapon = true;
+                        FrmDrop frmDrop = new FrmDrop();
+                        frmDrop.Show();
+                        frmDrop.Refresh();
+                        Thread.Sleep(3000);
+                        frmDrop.sp.Stop();
+                        frmDrop.Hide();
+
+                    }
+
+                    if (enemy.CoinDropped > 0)
+                    {
+                        FrmReward frmReward = new FrmReward();
+                        frmReward.Amt = enemy.CoinDropped;
+                        frmReward.Show();
+                    }
+
+
+                }
+                else
+                {
+                    float prevPlayerHealth = character.Health;
+                    enemy.SimpleAttack(character);
+                    float playerDamage = (float)Math.Round(prevPlayerHealth - character.Health);
+                    lblPlayerDamage.Text = playerDamage.ToString();
+                    lblPlayerDamage.Visible = true;
+                    tmrPlayerDamage.Enabled = true;
+                    if (character.Health <= 0)
+                    {
+                        UpdateStats();
+                        game.ChangeState(GameState.DEAD);
+                        lblEndFightMessage.Text = "You Were Defeated!";
+                        lblEndFightMessage.Visible = true;
+                        character.HasWeapon = false;
+                        Refresh();
+                        Thread.Sleep(1200);
+                        EndFight();
+                        FrmGameOver frmGameOver = new FrmGameOver();
+                        frmGameOver.Show();
+                    }
+                    else
+                    {
+                        UpdateStats();
+                    }
+                }
+                usedWeapon += 1;
+            }
         }
     }
+    
 }

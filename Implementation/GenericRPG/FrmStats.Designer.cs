@@ -39,6 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblMana = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblWallet = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblWeaponDef = new System.Windows.Forms.Label();
@@ -46,8 +48,8 @@
             this.lblWeaponStr = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblWallet = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.buyStr = new System.Windows.Forms.Button();
+            this.buyDef = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -188,6 +190,30 @@
             this.panel1.Size = new System.Drawing.Size(240, 287);
             this.panel1.TabIndex = 25;
             // 
+            // lblWallet
+            // 
+            this.lblWallet.AutoSize = true;
+            this.lblWallet.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWallet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblWallet.Location = new System.Drawing.Point(110, 248);
+            this.lblWallet.Name = "lblWallet";
+            this.lblWallet.Size = new System.Drawing.Size(99, 29);
+            this.lblWallet.TabIndex = 32;
+            this.lblWallet.Text = "label10";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Lime;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.Location = new System.Drawing.Point(11, 248);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 29);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Wallet:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -268,29 +294,25 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "Weapon Stats";
             // 
-            // lblWallet
+            // buyStr
             // 
-            this.lblWallet.AutoSize = true;
-            this.lblWallet.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWallet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblWallet.Location = new System.Drawing.Point(110, 248);
-            this.lblWallet.Name = "lblWallet";
-            this.lblWallet.Size = new System.Drawing.Size(99, 29);
-            this.lblWallet.TabIndex = 32;
-            this.lblWallet.Text = "label10";
+            this.buyStr.Location = new System.Drawing.Point(562, 368);
+            this.buyStr.Name = "buyStr";
+            this.buyStr.Size = new System.Drawing.Size(75, 23);
+            this.buyStr.TabIndex = 29;
+            this.buyStr.Text = "Buy Str";
+            this.buyStr.UseVisualStyleBackColor = true;
+            this.buyStr.Click += new System.EventHandler(this.buyStr_Click);
             // 
-            // label10
+            // buyDef
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Lime;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.Location = new System.Drawing.Point(11, 248);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 29);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Wallet:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buyDef.Location = new System.Drawing.Point(677, 368);
+            this.buyDef.Name = "buyDef";
+            this.buyDef.Size = new System.Drawing.Size(75, 23);
+            this.buyDef.TabIndex = 30;
+            this.buyDef.Text = "Buy Def";
+            this.buyDef.UseVisualStyleBackColor = true;
+            this.buyDef.Click += new System.EventHandler(this.buyDef_Click);
             // 
             // FrmStats
             // 
@@ -300,6 +322,8 @@
             this.BackgroundImage = global::GenericRPG.Properties.Resources.character_levelup;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(804, 582);
+            this.Controls.Add(this.buyDef);
+            this.Controls.Add(this.buyStr);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmStats";
@@ -336,5 +360,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblWeaponStr;
         private System.Windows.Forms.Label lblWeaponDef;
+        private System.Windows.Forms.Button buyStr;
+        private System.Windows.Forms.Button buyDef;
     }
 }

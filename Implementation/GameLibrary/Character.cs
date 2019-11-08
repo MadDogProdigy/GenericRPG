@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace GameLibrary
 {
@@ -27,9 +28,12 @@ namespace GameLibrary
         public PictureBox Pic { get; private set; }
         private Position pos;
         public Map map;
+        public bool HasWeapon { get; set; }
         public float XP { get; set; }
         public bool ShouldLevelUp { get; private set; }
         public int Wallet { get; private set; }
+        public int WeaponStr=0;
+        public int WeaponDef=0;
 
         /// <summary>
         /// 
@@ -60,10 +64,9 @@ namespace GameLibrary
                 ShouldLevelUp = true;
             }
         }
-
         public void GetMoney(int amount)
         {
-            if(amount > 0)
+            if (amount > 0)
             {
                 Wallet += amount;
             }
@@ -92,7 +95,7 @@ namespace GameLibrary
         }
 
         public Task Move(MoveDir dir)
-        {//bool
+        {
             Position newPos = pos;
             switch (dir)
             {
@@ -131,7 +134,30 @@ namespace GameLibrary
             }
             return Task.NO_TASK;//false
         }
+    
+
+
+        public bool DidDrop()
+        {
+            int result1 = 0;
+            Random rnd = new Random();
+            result1 = rnd.Next(30);
+            if (result1 == 27)
+            {
+                
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public void WeaponAttack(Mortal reciever)
+        {
+            Character character = Game.GetGame().Character;
+            reciever.Health = reciever.Health - (character.Str *2);
+        }
     }
-
-
 }

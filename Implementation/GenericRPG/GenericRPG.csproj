@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDrop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDrop.Designer.cs">
+      <DependentUpon>FrmDrop.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmArena.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDrop.resx">
+      <DependentUpon>FrmDrop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmArena.resx">
       <DependentUpon>FrmArena.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,7 +133,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="obj\Debug\build.force" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
@@ -135,7 +144,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources1.Designer.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -156,9 +165,10 @@
   <ItemGroup>
     <Content Include="obj\Debug\GenericRPG.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TempPE\Properties.Resources1.Designer.cs.dll" />
-    <Content Include="Resources\EartElemental.png" />
+    <Content Include="Resources\EarthElemental.png" />
     <Content Include="Resources\FinalBoss.png" />
     <Content Include="Resources\FireElemental.png" />
+    <Content Include="Resources\chest.png" />
     <Content Include="Resources\levelup.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -174,7 +184,9 @@
     <Content Include="Resources\swing.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\angels.wav" />
     <Content Include="Resources\WaterElemental.png" />
+    <Content Include="Resources\weapon.wav" />
     <Content Include="Resources\WindElemental.png" />
     <None Include="Resources\level2.png" />
     <None Include="Resources\quitgame.png" />

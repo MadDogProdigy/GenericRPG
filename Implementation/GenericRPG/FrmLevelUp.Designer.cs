@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            
             this.label17 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblNewLevel = new System.Windows.Forms.Label();
@@ -43,14 +44,20 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblNewHealth = new System.Windows.Forms.Label();
             this.lblNewDef = new System.Windows.Forms.Label();
+            this.lblUpgrades = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lblNewStr = new System.Windows.Forms.Label();
+            this.btnStr = new System.Windows.Forms.Button();
+            this.btnDef = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            
+           
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,6 +224,12 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(186, 234);
             this.panel2.TabIndex = 26;
+            
+            
+            
+            
+            
+            
             // 
             // label17
             // 
@@ -343,6 +356,8 @@
             this.lblNewStr.Size = new System.Drawing.Size(85, 29);
             this.lblNewStr.TabIndex = 16;
             this.lblNewStr.Text = "label1";
+
+          
             // 
             // btnClose
             // 
@@ -351,9 +366,27 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(159, 33);
             this.btnClose.TabIndex = 27;
-            this.btnClose.Text = "Ok, I get it";
+            this.btnClose.Text = "Exit";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            //btnStr
+            this.btnStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStr.Location = new System.Drawing.Point(150, 420);
+            this.btnStr.Name = "btnStr";
+            this.btnStr.Size = new System.Drawing.Size(159, 33);
+            this.btnStr.TabIndex = 27;
+            this.btnStr.Text = "Increase Str";
+            this.btnStr.UseVisualStyleBackColor = true;
+            this.btnStr.Click += new System.EventHandler(this.btnStr_Click);
+            //btn
+            this.btnDef.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDef.Location = new System.Drawing.Point(420, 420);
+            this.btnDef.Name = "btnDef";
+            this.btnDef.Size = new System.Drawing.Size(159, 33);
+            this.btnDef.TabIndex = 27;
+            this.btnDef.Text = "Increase Def";
+            this.btnDef.UseVisualStyleBackColor = true;
+            this.btnDef.Click += new System.EventHandler(this.btnDef_Click);
             // 
             // pictureBox1
             // 
@@ -373,6 +406,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(804, 582);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnStr);
+            this.Controls.Add(this.btnDef);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -384,6 +419,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -403,11 +439,13 @@
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Label label16;
     private System.Windows.Forms.Panel panel2;
+    
     private System.Windows.Forms.Label label17;
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.Label lblNewLevel;
     private System.Windows.Forms.Label lblNewMana;
     private System.Windows.Forms.Label label9;
+    private System.Windows.Forms.Label lblUpgrades;
     private System.Windows.Forms.Label lblNewHealth;
     private System.Windows.Forms.Label lblNewDef;
     private System.Windows.Forms.Label label12;
@@ -415,6 +453,8 @@
     private System.Windows.Forms.Label label14;
     private System.Windows.Forms.Label lblNewStr;
     private System.Windows.Forms.Button btnClose;
+    private System.Windows.Forms.Button btnStr;
+    private System.Windows.Forms.Button btnDef;
     private System.Windows.Forms.PictureBox pictureBox1;
   }
 }

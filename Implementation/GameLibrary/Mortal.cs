@@ -52,24 +52,32 @@ namespace GameLibrary {
     }
     public void SetLevel(int level) {
       for (int i = 1; i < level; i++) {
+        IncAtt(1);
+        IncAtt(1);
+        IncAtt(2);
+        IncAtt(2);
         LevelUp();
       }
     }
+        //changed the levelup and added incatt function
     public virtual void LevelUp() {
       // level increases
       Level++;
-
+      
       // health and mana
       MaxHealth += LVLINC_HEALTH;
       MaxMana += LVLINC_MANA;
       Health = MaxHealth;
       Mana = MaxMana;
-
+            }
+    public virtual void IncAtt(int which) {
       // other stats
-      Str += LVLINC_STR;
-      Def += LVLINC_DEF;
-      Luck += LVLINC_LUCK;
-      Speed += LVLINC_SPEED;
+      if (which==1){
+          Str+=5;
+            }
+      if (which==2){
+          Def+=5;
+            }
     }
     public void RefillHealthAndMana() {
       Health = MaxHealth;
