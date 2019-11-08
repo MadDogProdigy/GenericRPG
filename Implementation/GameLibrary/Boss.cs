@@ -24,41 +24,41 @@ namespace GameLibrary
             {
                 Img = img;
                 name = "Wind Elemental";
-                Health = 200;
-                Str = 25;
-                Def = 25;
+                Health = 500;
+                Str = 50;
+                Def = 50;
             }
             else if (level == 15)
             {
                 Img = img;
                 name = "Water Elemental";
-                Health = 300;
-                Str = 30;
-                Def = 25;
+                Health = 800;
+                Str = 80;
+                Def = 50;
             }
             else if (level == 22)
             {
                 Img = img;
                 name = "Fire Elemental";
-                Health = 400;
-                Str = 40;
-                Def = 25;
+                Health = 1000;
+                Str = 90;
+                Def = 50;
             }
             else if (level == 29)
             {
                 Img = img;
                 name = "Earth Elemental";
-                Health = 500;
-                Str = 30;
-                Def = 50;
+                Health = 1200;
+                Str = 80;
+                Def = 100;
             }
             else if (level == 36)
             {
                 Img = img;
                 name = "Cherrybot";
                 Health = 65000;
-                Str = 50;
-                Def = 50;
+                Str = 100;
+                Def = 100;
             }
 
             XpDropped = (float)rand.NextDouble() * (MAX_XP_DROP - MIN_XP_DROP) + MIN_XP_DROP;
