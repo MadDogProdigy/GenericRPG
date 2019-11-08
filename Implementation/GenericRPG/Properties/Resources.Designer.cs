@@ -100,37 +100,27 @@ namespace GenericRPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 11111111111111
-        ///12000600000001
-        ///10000000600001
-        ///10000000000001
-        ///10000000000001
-        ///10600000000001
-        ///11111111111111.
-        /// </summary>
-        internal static string coinHunt {
-            get {
-                return ResourceManager.GetString("coinHunt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap EartElemental {
-            get {
-                object obj = ResourceManager.GetObject("EartElemental", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap chest {
             get {
                 object obj = ResourceManager.GetObject("chest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 11111111111111
+        ///12000000000001
+        ///10000000000001
+        ///10000000000001
+        ///10000000000001
+        ///10000000000001
+        ///11111111111111.
+        /// </summary>
+        internal static string coinHunt {
+            get {
+                return ResourceManager.GetString("coinHunt", resourceCulture);
             }
         }
         
