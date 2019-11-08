@@ -6,6 +6,7 @@
         MOVE,
         FIGHT_BOSS,
         LEAVE_LEVEL,
-        EXIT_GAME
+        EXIT_GAME,
+        GRAB_COIN
     }
 }

@@ -13,7 +13,8 @@ namespace GameLibrary {
     FIGHTING,
     DEAD,
     BOSS_FIGHT,
-  }
+        COIN_HUNT,
+    }
 
   public class Game {
     private static Game game;

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Boss.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="CoinHunt.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />

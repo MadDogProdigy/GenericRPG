@@ -1,4 +1,7 @@
-﻿namespace GenericRPG
+﻿using System;
+using System.Windows.Forms;
+
+namespace GenericRPG
 {
     partial class FrmCoinFrenzy
     {
@@ -28,12 +31,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.grpCoins = new System.Windows.Forms.GroupBox();
+            this.SuspendLayout();
+            // 
+            // grpMap
+            // 
+            this.grpCoins.Location = new System.Drawing.Point(206, 81);
+            this.grpCoins.Name = "grpMap";
+            this.grpCoins.Size = new System.Drawing.Size(389, 288);
+            this.grpCoins.TabIndex = 2;
+            this.grpCoins.TabStop = false;
+            // 
+            // FrmCoinFrenzy
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmCoinFrenzy";
-        }
+            this.Controls.Add(this.grpCoins);
+            this.Name = "FrmCoinFrenzy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Coin Frenzy";
+            this.Load += new System.EventHandler(this.FrmCoinFrenzy_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmCoinFrenzy_KeyDown);
+            this.ResumeLayout(false);
 
+        }
         #endregion
+
+        private System.Windows.Forms.GroupBox grpCoins;
     }
 }
