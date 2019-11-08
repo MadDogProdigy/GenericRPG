@@ -163,7 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\character.png" />
-    <None Include="Resources\wall.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Resources\level3.txt" />
@@ -197,6 +196,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\angels.wav" />
+    <Content Include="Resources\wall.png" />
     <Content Include="Resources\WaterElemental.png" />
     <Content Include="Resources\weapon.wav" />
     <Content Include="Resources\WindElemental.png" />
